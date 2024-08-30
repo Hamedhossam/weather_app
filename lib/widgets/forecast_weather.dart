@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ForecastWeather extends StatefulWidget {
-  const ForecastWeather({super.key});
+class ForecastWeatherWidget extends StatefulWidget {
+  const ForecastWeatherWidget({super.key});
 
   @override
-  State<ForecastWeather> createState() => _ForecastWeatherState();
+  State<ForecastWeatherWidget> createState() => _ForecastWeatherWidgetState();
 }
 
-class _ForecastWeatherState extends State<ForecastWeather> {
+class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
   bool isToday = true;
   int selected = 0;
   @override

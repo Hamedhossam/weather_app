@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_weather/screens/home_screen.dart';
+import 'package:my_weather/screens/search_weather_screen.dart';
+import 'package:my_weather/screens/welcome_screen.dart';
+import 'package:my_weather/services/weather_service.dart';
 
 void main() {
   runApp(const WeatherApp());
@@ -13,10 +16,12 @@ class WeatherApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        "home": (context) => const HomeScreen(),
+        "start": (context) => const WelcomeScreen(),
+        // "home": (context) => HomeScreen(),
+        "search": (context) => const SearchWeatherScreen(),
       },
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: const WelcomeScreen(),
     );
   }
 }

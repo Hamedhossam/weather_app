@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class SmallWeatherCard extends StatelessWidget {
   String title;
   String image;
-  String degree;
+  String time;
 
   SmallWeatherCard({
-    required this.degree,
+    required this.time,
     required this.image,
     required this.title,
     super.key,
@@ -16,6 +16,7 @@ class SmallWeatherCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(5),
       width: MediaQuery.sizeOf(context).width * .45,
       height: MediaQuery.sizeOf(context).height * .115,
       decoration: BoxDecoration(
@@ -36,7 +37,7 @@ class SmallWeatherCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                degree,
+                time,
                 style: const TextStyle(
                   fontSize: 22,
                   color: Colors.white,
