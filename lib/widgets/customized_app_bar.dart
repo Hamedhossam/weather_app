@@ -9,21 +9,18 @@ class CustomizedAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(25.0),
-      padding: const EdgeInsets.all(3.0),
+      padding: const EdgeInsets.all(10.0),
       decoration: BoxDecoration(
           border: Border.all(color: const Color.fromARGB(255, 168, 168, 168))),
-      child: Row(
+      child: const Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
+          Icon(
+            Icons.search,
+            color: Colors.white,
           ),
-          const Text(
-            'Searh For Your Country 🌎',
+          Text(
+            '  Searh For Another City 🌎',
             style: TextStyle(color: Colors.white),
           )
         ],

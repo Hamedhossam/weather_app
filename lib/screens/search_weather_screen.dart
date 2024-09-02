@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
+import 'package:my_weather/cubit/weather_cubit/weather_cubit.dart';
+import 'package:my_weather/cubit/weather_cubit/weather_states.dart';
+import 'package:my_weather/data/repository/weather_repository.dart';
 import 'package:my_weather/models/today_weather_model.dart';
 import 'package:my_weather/screens/home_screen.dart';
 import 'package:my_weather/services/weather_service.dart';
@@ -51,6 +54,7 @@ class _SearchingTextFieldState extends State<SearchingTextField> {
 
   String cityName = 'tanta';
   TodayWeatherModel? todayWeatherModel;
+  WeatherRepository? weatherRepository;
 
   @override
   Widget build(BuildContext context) {
@@ -100,18 +104,22 @@ class _SearchingTextFieldState extends State<SearchingTextField> {
               onPressed: () async {
                 if (_formKey.currentState!.validate()) {
                   cityName = _controller.text;
+                  var weatherCubit = BlocProvider.of<WeatherCubit>(context);
+                  todayWeatherModel =
+                      await weatherCubit.getTodayWeather(cityName);
 
-                  todayWeatherModel = await WeatherService()
-                      .getTodayWeather(cityName: cityName);
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (context) {
                         return HomeScreen(
-                            todayWeatherModel: todayWeatherModel!);
+                          cityName: cityName,
+                          todayWeatherModel: todayWeatherModel,
+                        );
                       },
                     ),
                   );
+
                   //
                 } else {
                   ////
@@ -141,3 +149,30 @@ class _SearchingTextFieldState extends State<SearchingTextField> {
     );
   }
 }
+/* onPressed: () async {
+                if (_formKey.currentState!.validate()) {
+                  cityName = _controller.text;
+                  todayWeatherModel = await WeatherService()
+                      .getTodayWeather(cityName: cityName);
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return HomeScreen(
+                          cityName: cityName,
+                          todayWeatherModel: todayWeatherModel,
+                        );
+                      },
+                    ),
+                  );
+                  //
+                } else {
+                  ////
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      duration: Duration(seconds: 1),
+                      content: Text('Valid input:error'),
+                    ),
+                  );
+                }
+              }*/

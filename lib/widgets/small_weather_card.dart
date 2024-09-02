@@ -18,7 +18,7 @@ class SmallWeatherCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(5),
       width: MediaQuery.sizeOf(context).width * .45,
-      height: MediaQuery.sizeOf(context).height * .115,
+      height: MediaQuery.sizeOf(context).height * .110,
       decoration: BoxDecoration(
         color: Color.fromARGB(216, 44, 44, 44),
         borderRadius: BorderRadius.circular(25),

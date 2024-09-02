@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
+import 'package:my_weather/screens/search_weather_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -50,8 +51,11 @@ class WelcomeScreen extends StatelessWidget {
               ),
             ),
             GestureDetector(
+              //Edited
               onTap: () {
-                Navigator.pushNamed(context, "search");
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const SearchWeatherScreen();
+                }));
               },
               child: Container(
                 margin: const EdgeInsets.all(25.0),
@@ -87,3 +91,6 @@ class WelcomeScreen extends StatelessWidget {
     );
   }
 }
+/*onTap: () {
+                Navigator.pushNamed(context, "search");
+              },*/

@@ -19,8 +19,10 @@ class TodayWeatherWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text(
+            textAlign: TextAlign.center,
             todayWeatherModel.country!,
             style: const TextStyle(
+              height: 1,
               color: Colors.white,
               fontSize: 50,
               fontWeight: FontWeight.w600,
@@ -37,6 +39,7 @@ class TodayWeatherWidget extends StatelessWidget {
                 width: 5,
               ),
               Text(
+                overflow: TextOverflow.ellipsis,
                 todayWeatherModel.town!,
                 style: const TextStyle(
                   color: Colors.white,
@@ -46,11 +49,15 @@ class TodayWeatherWidget extends StatelessWidget {
               const SizedBox(
                 width: 5,
               ),
-              Text(
-                '- ${todayWeatherModel.city}',
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
+              SizedBox(
+                width: 60,
+                child: Text(
+                  overflow: TextOverflow.ellipsis,
+                  '- ${todayWeatherModel.city}',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                  ),
                 ),
               ),
             ],
@@ -70,12 +77,16 @@ class TodayWeatherWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text(
-                        '${todayWeatherModel.temperature!.toInt().ceil()}°',
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 90,
-                          fontWeight: FontWeight.w600,
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 15.0),
+                        child: Text(
+                          '${todayWeatherModel.temperature!.toInt().ceil()}°',
+                          style: const TextStyle(
+                            height: 1,
+                            color: Colors.white,
+                            fontSize: 90,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                       Row(
