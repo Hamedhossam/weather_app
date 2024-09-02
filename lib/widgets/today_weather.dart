@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_weather/models/today_weather_model.dart';
 import 'package:my_weather/widgets/small_weather_card.dart';
 
+// ignore: must_be_immutable
 class TodayWeatherWidget extends StatelessWidget {
   TodayWeatherModel todayWeatherModel;
   TodayWeatherWidget({

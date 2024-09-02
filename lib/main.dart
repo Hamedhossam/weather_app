@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_weather/screens/home_screen.dart';
 import 'package:my_weather/screens/search_weather_screen.dart';
 import 'package:my_weather/screens/welcome_screen.dart';
-import 'package:my_weather/services/weather_service.dart';
 
 void main() {
   runApp(const WeatherApp());

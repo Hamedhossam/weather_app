@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:my_weather/models/today_weather_model.dart';
 import 'package:my_weather/widgets/customized_app_bar.dart';
 import 'package:my_weather/widgets/forecast_weather.dart';
-import 'package:my_weather/widgets/small_weather_card.dart';
 import 'package:my_weather/widgets/today_weather.dart';
 
+// ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
   TodayWeatherModel todayWeatherModel;
   HomeScreen({
@@ -27,6 +27,7 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class HomeScreenView extends StatelessWidget {
   HomeScreenView({
     super.key,

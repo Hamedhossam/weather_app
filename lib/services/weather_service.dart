@@ -13,7 +13,7 @@ class WeatherService {
       TodayWeatherModel todayWeatherModel =
           TodayWeatherModel.fromJson(response);
       return todayWeatherModel;
-    } on Exception catch (e) {
+    } on Exception {
       return null;
     }
   }

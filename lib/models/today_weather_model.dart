@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 class TodayWeatherModel {
   String? country;
   String? town;
